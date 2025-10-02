@@ -83,6 +83,11 @@
         .logo-img {
             width: 40px;
             height: 40px;
+            filter: brightness(0) saturate(100%) invert(64%) sepia(48%) saturate(1588%) hue-rotate(158deg) brightness(95%) contrast(90%);
+        }
+
+        [data-theme="dark"] .logo-img {
+            filter: brightness(0) saturate(100%) invert(78%) sepia(28%) saturate(1791%) hue-rotate(152deg) brightness(99%) contrast(92%);
         }
 
         .logo-text {
@@ -417,7 +422,6 @@
 
     <main>
         <section id="home" class="hero">
-            <img src="kaelix.svg" alt="Kaelix Logo" class="hero-logo">
             <div class="badge">Service-Disabled Veteran-Owned Small Business (SDVOSB)</div>
             <h1>KAELIX</h1>
             <p class="subtitle">Where cyber expertise evolves</p>

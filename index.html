@@ -9,8 +9,8 @@
     <title>Kaelix Cyber Inc. | Where Cyber Expertise Evolves</title>
 
     <!-- Preload both logos to avoid swap flicker -->
-    <link rel="preload" as="image" href="Kaelix_Corp_Image-Dark.png" imagesizes="(max-width: 768px) 440px, 320px" />
-    <link rel="preload" as="image" href="Kaelix_Corp_Image-Light.png"  imagesizes="(max-width: 768px) 440px, 320px" />
+    <link rel="preload" as="image" href="Kaelix_Corp_Image-Light.png" imagesizes="(max-width: 768px) 160px, 320px" />
+    <link rel="preload" as="image" href="Kaelix_Corp_Image-Dark.png"  imagesizes="(max-width: 768px) 160px, 320px" />
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -55,7 +55,7 @@
         header {
             background: var(--card-bg);
             backdrop-filter: blur(10px);
-            padding: 1.2rem 0;
+            padding: 1.2rem 0; /* a bit taller to fit larger logo */
             position: fixed;
             width: 100%;
             top: 0;
@@ -75,39 +75,19 @@
         }
 
         .logo-container {
-          display: flex;
-          align-items: center;
-          text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
         }
 
-        /* Larger logo that fills the left side of navbar nicely */
+        /* ⬆️ doubled from 40px → 80px (desktop) */
         .logo-img {
-          display: block;
-          height: 90px;         /* big and readable */
-          width: auto;
-          object-fit: contain;
-          margin-top: -10px;    /* align vertically with nav links */
-          margin-bottom: -10px; /* keeps it centered in header */
+            display: block;
+            height: 80px;
+            width: auto;
+            object-fit: contain;
         }
-
-        /* Make it scale down slightly for smaller screens */
-        @media (max-width: 1024px) {
-          .logo-img {
-            height: 75px;
-            margin-top: -8px;
-            margin-bottom: -8px;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .logo-img {
-            height: 60px;
-            margin-top: -5px;
-            margin-bottom: -5px;
-          }
-        }
-
-
 
         .nav-right { display: flex; align-items: center; gap: 2rem; }
 
@@ -148,12 +128,10 @@
 
         /* Hero Section */
         .hero {
-            padding: 180px 2rem 120px;
+            padding: 200px 2rem 120px; /* add offset for taller header */
             max-width: 1200px;
             margin: 0 auto;
         }
-
-        .hero-logo { width: 80px; height: 80px; margin-bottom: 1.5rem; }
 
         .hero h1 {
             font-size: 3.5rem;
@@ -294,48 +272,49 @@
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .logo-img { height: 72px; }
+        }
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero .subtitle { font-size: 1.2rem; }
-            .competencies-grid { grid-template-columns: 1fr; }
+            .logo-img { height: 64px; }
+            .hero { padding-top: 180px; }
             h2 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
     <header>
-  <nav>
-    <a href="#" class="logo-container" aria-label="Kaelix Cyber Inc. Home">
-  <img
-    id="site-logo"
-    class="logo-img"
-    src="Kaelix_Corp_Image-Light.png"
-    alt="Kaelix Cyber Inc."
-    decoding="async"
-    fetchpriority="high"
-  />
-</a>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#capabilities">Capabilities</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-        <svg class="theme-icon" id="theme-icon-light" viewBox="0 0 24 24" style="display: none;">
-          <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                stroke="#4db8e0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        </svg>
-        <svg class="theme-icon" id="theme-icon-dark" viewBox="0 0 24 24">
-          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"
-                stroke="#4db8e0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        </svg>
-      </button>
-    </div>
-  </nav>
-</header>
+        <nav>
+            <a href="#" class="logo-container" aria-label="Kaelix Cyber Inc. Home">
+                <img
+                    id="site-logo"
+                    class="logo-img"
+                    src="Kaelix_Corp_Image-Dark.png"  <!-- default to LIGHT theme asset (dark text) -->
+                    alt="Kaelix Cyber Inc."
+                    decoding="async"
+                    fetchpriority="high"
+                />
+            </a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#capabilities">Capabilities</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="theme-icon" id="theme-icon-light" viewBox="0 0 24 24" style="display: none;">
+                        <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke="#4db8e0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                    <svg class="theme-icon" id="theme-icon-dark" viewBox="0 0 24 24">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="#4db8e0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
     <main>
         <section id="home" class="hero">
             <h1>KAELIX</h1>
@@ -414,18 +393,22 @@
         function setLogoForTheme(theme) {
             const logo = document.getElementById('site-logo');
             if (!logo) return;
-            logo.src = theme === 'dark'
-                ? 'Kaelix_Corp_Image-Dark.png'
-                : 'Kaelix_Corp_Image-Light.png';
-            logo.alt = theme === 'dark'
-                ? 'Kaelix Cyber Inc. (Dark)'
-                : 'Kaelix Cyber Inc. (Light)';
+
+            // NOTE: "Dark" file has dark text → use on LIGHT theme.
+            //       "Light" file has light text → use on DARK theme.
+            if (theme === 'dark') {
+                logo.src = 'Kaelix_Corp_Image-Light.png';
+                logo.alt = 'Kaelix Cyber Inc. (Light logo for dark theme)';
+            } else {
+                logo.src = 'Kaelix_Corp_Image-Dark.png';
+                logo.alt = 'Kaelix Cyber Inc. (Dark logo for light theme)';
+            }
         }
 
         // Theme toggle functionality
         function toggleTheme() {
             const html = document.documentElement;
-            const currentTheme = html.getAttribute('data-theme');
+            const currentTheme = html.getAttribute('data-theme') || 'light';
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
             html.setAttribute('data-theme', newTheme);
@@ -434,7 +417,6 @@
             // Update icon visibility
             const lightIcon = document.getElementById('theme-icon-light');
             const darkIcon = document.getElementById('theme-icon-dark');
-
             if (newTheme === 'dark') {
                 lightIcon.style.display = 'block';
                 darkIcon.style.display = 'none';
@@ -443,7 +425,7 @@
                 darkIcon.style.display = 'block';
             }
 
-            // Update logo for new theme
+            // Swap logo for new theme
             setLogoForTheme(newTheme);
         }
 
@@ -454,7 +436,6 @@
 
             const lightIcon = document.getElementById('theme-icon-light');
             const darkIcon = document.getElementById('theme-icon-dark');
-
             if (savedTheme === 'dark') {
                 lightIcon.style.display = 'block';
                 darkIcon.style.display = 'none';
@@ -463,7 +444,7 @@
                 darkIcon.style.display = 'block';
             }
 
-            // Set initial logo to match theme
+            // Set initial logo for saved theme
             setLogoForTheme(savedTheme);
         });
 

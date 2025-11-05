@@ -55,7 +55,7 @@
         header {
             background: var(--card-bg);
             backdrop-filter: blur(10px);
-            padding: 1rem 0;
+            padding: 1.2rem 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -80,21 +80,33 @@
           text-decoration: none;
         }
 
-        /* Increase visible logo size and let it scale naturally */
+        /* Larger logo that fills the left side of navbar nicely */
         .logo-img {
           display: block;
-          height: 64px;         /* bump from 40px → 64px */
-          width: auto;          /* keeps correct aspect ratio */
-          object-fit: contain;  /* ensures no distortion */
-          margin-top: 2px;      /* optional: vertically centers slightly */
+          height: 90px;         /* big and readable */
+          width: auto;
+          object-fit: contain;
+          margin-top: -10px;    /* align vertically with nav links */
+          margin-bottom: -10px; /* keeps it centered in header */
         }
 
-        /* Optional: make logo scale down nicely on mobile */
-        @media (max-width: 768px) {
+        /* Make it scale down slightly for smaller screens */
+        @media (max-width: 1024px) {
           .logo-img {
-            height: 52px;
+            height: 75px;
+            margin-top: -8px;
+            margin-bottom: -8px;
           }
         }
+
+        @media (max-width: 768px) {
+          .logo-img {
+            height: 60px;
+            margin-top: -5px;
+            margin-bottom: -5px;
+          }
+        }
+
 
 
         .nav-right { display: flex; align-items: center; gap: 2rem; }
@@ -295,15 +307,15 @@
     <header>
   <nav>
     <a href="#" class="logo-container" aria-label="Kaelix Cyber Inc. Home">
-      <img
-        id="site-logo"
-        class="logo-img"
-        src="Kaelix_Corp_Image-Light.png"
-        alt="Kaelix Cyber Inc."
-        decoding="async"
-        fetchpriority="high"
-      />
-    </a>
+  <img
+    id="site-logo"
+    class="logo-img"
+    src="Kaelix_Corp_Image-Light.png"
+    alt="Kaelix Cyber Inc."
+    decoding="async"
+    fetchpriority="high"
+  />
+</a>
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>

@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kaelix Cyber Inc. - Service-Disabled Veteran-Owned Small Business providing advanced cyber defense, training, and automation solutions for federal missions.">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kaelix Cyber Inc. - Service-Disabled Veteran-Owned Small Business providing advanced cyber defense, training, and automation solutions for federal missions." />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
     <title>Kaelix Cyber Inc. | Where Cyber Expertise Evolves</title>
+
+    <!-- Preload both logos to avoid swap flicker -->
+    <link rel="preload" as="image" href="Kaelix_Corp_Image-Light.png" imagesizes="(max-width: 768px) 120px, 160px" />
+    <link rel="preload" as="image" href="Kaelix_Corp_Image-Dark.png"  imagesizes="(max-width: 768px) 120px, 160px" />
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --primary: #3b9ec5;
@@ -76,42 +77,18 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.5rem; /* tighter since text is embedded in PNG */
             text-decoration: none;
         }
 
         .logo-img {
-            width: 40px;
-            height: 40px;
-        }
-        
-        .logo-img path {
-            fill: var(--primary);
+            display: block;
+            width: auto;
+            height: 40px;        /* keep the original visual size */
+            image-rendering: -webkit-optimize-contrast; /* crisper on some browsers */
         }
 
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-main {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text);
-            letter-spacing: 0.05em;
-        }
-
-        .logo-tagline {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
+        .nav-right { display: flex; align-items: center; gap: 2rem; }
 
         .nav-links {
             display: flex;
@@ -127,9 +104,7 @@
             font-weight: 500;
         }
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+        .nav-links a:hover { color: var(--primary); }
 
         /* Theme Toggle */
         .theme-toggle {
@@ -144,22 +119,11 @@
             transition: all 0.3s ease;
         }
 
-        .theme-toggle:hover {
-            border-color: var(--primary);
-        }
+        .theme-toggle:hover { border-color: var(--primary); }
 
-        .theme-icon {
-            width: 20px;
-            height: 20px;
-        }
-        
-        #theme-icon-light {
-            stroke: var(--primary);
-        }
-        
-        #theme-icon-dark {
-            stroke: var(--primary);
-        }
+        .theme-icon { width: 20px; height: 20px; }
+        #theme-icon-light { stroke: var(--primary); }
+        #theme-icon-dark  { stroke: var(--primary); }
 
         /* Hero Section */
         .hero {
@@ -168,11 +132,7 @@
             margin: 0 auto;
         }
 
-        .hero-logo {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 1.5rem;
-        }
+        .hero-logo { width: 80px; height: 80px; margin-bottom: 1.5rem; }
 
         .hero h1 {
             font-size: 3.5rem;
@@ -189,12 +149,7 @@
             font-weight: 500;
         }
 
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin-bottom: 2rem;
-        }
+        .hero p { font-size: 1.15rem; color: var(--text-secondary); max-width: 700px; margin-bottom: 2rem; }
 
         .badge {
             display: inline-block;
@@ -221,11 +176,7 @@
             box-shadow: 0 4px 12px var(--shadow);
         }
 
-        .cta-button:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px var(--shadow);
-        }
+        .cta-button:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 20px var(--shadow); }
 
         /* Sections */
         section {
@@ -237,14 +188,8 @@
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        section.focused {
-            transform: scale(1.02);
-        }
+        section.visible { opacity: 1; transform: translateY(0); }
+        section.focused { transform: scale(1.02); }
 
         h2 {
             font-size: 2.5rem;
@@ -276,23 +221,11 @@
             border-color: var(--primary);
         }
 
-        .competency-card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-
-        .competency-card p {
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
+        .competency-card h3 { color: var(--primary); margin-bottom: 1rem; font-size: 1.3rem; font-weight: 700; }
+        .competency-card p  { color: var(--text-secondary); line-height: 1.8; }
 
         /* Differentiators */
-        .differentiators-list {
-            list-style: none;
-            margin-top: 2rem;
-        }
+        .differentiators-list { list-style: none; margin-top: 2rem; }
 
         .differentiators-list li {
             background: var(--card-bg);
@@ -305,10 +238,7 @@
             transition: all 0.3s;
         }
 
-        .differentiators-list li:hover {
-            transform: translateX(8px);
-            box-shadow: 0 4px 12px var(--shadow);
-        }
+        .differentiators-list li:hover { transform: translateX(8px); box-shadow: 0 4px 12px var(--shadow); }
 
         /* Contact Section */
         .contact-info {
@@ -327,26 +257,10 @@
             transition: all 0.3s;
         }
 
-        .contact-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 16px var(--shadow);
-        }
-
-        .contact-card h3 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-            font-weight: 700;
-        }
-
-        .contact-card p, .contact-card a {
-            color: var(--text-secondary);
-            text-decoration: none;
-        }
-
-        .contact-card a:hover {
-            color: var(--primary);
-        }
+        .contact-card:hover { transform: translateY(-3px); box-shadow: 0 8px 16px var(--shadow); }
+        .contact-card h3 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1rem; font-weight: 700; }
+        .contact-card p, .contact-card a { color: var(--text-secondary); text-decoration: none; }
+        .contact-card a:hover { color: var(--primary); }
 
         /* Footer */
         footer {
@@ -360,45 +274,28 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .logo-main {
-                font-size: 1.2rem;
-            }
-
-            .logo-tagline {
-                font-size: 0.6rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .competencies-grid {
-                grid-template-columns: 1fr;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero .subtitle { font-size: 1.2rem; }
+            .competencies-grid { grid-template-columns: 1fr; }
+            h2 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <a href="#" class="logo-container">
-                <img src="kaelix.svg" alt="Kaelix Logo" class="logo-img">
-                <div class="logo-text">
-                    <span class="logo-main">KAELIX</span>
-                    <span class="logo-tagline">Where cyber expertise evolves</span>
-                </div>
+            <a href="#" class="logo-container" aria-label="Kaelix Cyber Inc. Home">
+                <img
+                    id="site-logo"
+                    class="logo-img"
+                    src="Kaelix_Corp_Image-Light.png"
+                    alt="Kaelix Cyber Inc."
+                    width="160"
+                    height="40"
+                    decoding="async"
+                    fetchpriority="high"
+                />
             </a>
             <div class="nav-right">
                 <ul class="nav-links">
@@ -421,7 +318,6 @@
 
     <main>
         <section id="home" class="hero">
-            <!--<div class="badge">Service-Disabled Veteran-Owned Small Business (SDVOSB)</div> -->
             <h1>KAELIX</h1>
             <p class="subtitle">Where cyber expertise evolves</p>
             <p>Full-spectrum cybersecurity solutions for federal agencies, defense and enterprise organizations. From defensive operations to SOAR automation, we deliver mission-critical capabilities with agility and precision.</p>
@@ -466,7 +362,6 @@
         <section id="about">
             <h2>What Sets Us Apart</h2>
             <ul class="differentiators-list">
-               <!-- <li>Certified Service-Disabled Veteran-Owned Small Business (SDVOSB) with eligibility for federal set-aside contracts</li> -->
                 <li>Full-spectrum cyber capabilities spanning operations, automation, training, and compliance</li>
                 <li>SOAR as a core service vertical, enabling federal customers to transform cyber operations with automation and orchestration</li>
                 <li>Agile small business able to rapidly scale and adapt to evolving mission needs</li>
@@ -491,24 +386,35 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Kaelix Cyber Inc. All rights reserved. <!-- | Service-Disabled Veteran-Owned Small Business (SDVOSB) --></p>
+        <p>&copy; 2025 Kaelix Cyber Inc. All rights reserved.</p>
         <p style="margin-top: 0.5rem; font-size: 0.9rem;">Primary NAICS: 541519 – Other Computer Related Services</p>
     </footer>
 
     <script>
+        function setLogoForTheme(theme) {
+            const logo = document.getElementById('site-logo');
+            if (!logo) return;
+            logo.src = theme === 'dark'
+                ? 'Kaelix_Corp_Image-Dark.png'
+                : 'Kaelix_Corp_Image-Light.png';
+            logo.alt = theme === 'dark'
+                ? 'Kaelix Cyber Inc. (Dark)'
+                : 'Kaelix Cyber Inc. (Light)';
+        }
+
         // Theme toggle functionality
         function toggleTheme() {
             const html = document.documentElement;
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
+
             html.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
-            
+
             // Update icon visibility
             const lightIcon = document.getElementById('theme-icon-light');
             const darkIcon = document.getElementById('theme-icon-dark');
-            
+
             if (newTheme === 'dark') {
                 lightIcon.style.display = 'block';
                 darkIcon.style.display = 'none';
@@ -516,16 +422,19 @@
                 lightIcon.style.display = 'none';
                 darkIcon.style.display = 'block';
             }
+
+            // Update logo for new theme
+            setLogoForTheme(newTheme);
         }
 
         // Load saved theme on page load
         document.addEventListener('DOMContentLoaded', () => {
             const savedTheme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', savedTheme);
-            
+
             const lightIcon = document.getElementById('theme-icon-light');
             const darkIcon = document.getElementById('theme-icon-dark');
-            
+
             if (savedTheme === 'dark') {
                 lightIcon.style.display = 'block';
                 darkIcon.style.display = 'none';
@@ -533,6 +442,9 @@
                 lightIcon.style.display = 'none';
                 darkIcon.style.display = 'block';
             }
+
+            // Set initial logo to match theme
+            setLogoForTheme(savedTheme);
         });
 
         // Smooth scrolling for anchor links
@@ -540,48 +452,27 @@
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
         // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.2,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
+        const observerOptions = { threshold: 0.2, rootMargin: '0px 0px -100px 0px' };
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
         }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
+        document.querySelectorAll('section').forEach(section => observer.observe(section));
 
         // Focus effect on scroll
         const focusObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Remove focused class from all sections
                     document.querySelectorAll('section').forEach(s => s.classList.remove('focused'));
-                    // Add focused class to current section
                     entry.target.classList.add('focused');
                 }
             });
-        }, {
-            threshold: 0.5
-        });
-
-        document.querySelectorAll('section').forEach(section => {
-            focusObserver.observe(section);
-        });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('section').forEach(section => focusObserver.observe(section));
     </script>
 </body>
 </html>

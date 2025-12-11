@@ -55,7 +55,7 @@
         header {
             background: var(--card-bg);
             backdrop-filter: blur(10px);
-            padding: 1.2rem 0; /* a bit taller to fit larger logo */
+            padding: 0.75rem 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -92,9 +92,14 @@
 
         .logo-img {
             display: block;
-            height: 140px;
+            height: 160px;
             width: auto;
             object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
         }
 
         .nav-right { display: flex; align-items: center; gap: 2rem; }
@@ -205,27 +210,48 @@
 
         /* Hero Section */
         .hero {
-            padding: 200px 2rem 120px; /* add offset for taller header */
+            padding: 200px 2rem 120px;
             max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
             margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
             color: var(--text);
-            font-weight: 800;
-            letter-spacing: 0.02em;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            line-height: 1.2;
         }
 
         .hero .subtitle {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--primary);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             font-weight: 500;
         }
 
-        .hero p { font-size: 1.15rem; color: var(--text-secondary); max-width: 700px; margin-bottom: 2rem; }
+        .hero p { 
+            font-size: 1.15rem; 
+            color: var(--text-secondary); 
+            max-width: 700px; 
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
 
         .badge {
             display: inline-block;
@@ -237,6 +263,21 @@
             font-weight: 600;
             margin-bottom: 2rem;
             box-shadow: 0 4px 12px var(--shadow);
+            border: none;
+            min-height: 40px;
+            line-height: 1.4;
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px var(--shadow);
+        }
+
+        /* Ensure all badges use same primary color */
+        .badge-secondary {
+            background: var(--primary);
+            color: white;
         }
 
         .cta-button {
@@ -248,8 +289,11 @@
             border: none;
             border-radius: 50px;
             font-weight: 600;
+            font-size: 1rem;
             transition: all 0.3s;
             box-shadow: 0 4px 12px var(--shadow);
+            min-height: 48px;
+            line-height: 1.4;
         }
 
         .cta-button:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 20px var(--shadow); }
@@ -400,13 +444,20 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .logo-img { height: 72px; }
+            .logo-img { height: 100px; }
+            header { padding: 0.6rem 0; }
         }
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .mobile-menu-toggle { display: flex; }
-            .logo-img { height: 64px; }
-            .hero { padding-top: 180px; }
+            .logo-img { height: 80px; }
+            header { padding: 0.5rem 0; }
+            .hero { padding-top: 160px; }
+            .hero h1 { font-size: 2rem; }
+            .hero .subtitle { font-size: 1.1rem; }
+            .hero p { font-size: 1rem; }
+            .hero-badges { flex-direction: column; align-items: center; }
+            .badge { font-size: 0.85rem; padding: 0.5rem 1rem; }
             h2 { font-size: 2rem; }
             .scroll-to-top {
                 bottom: 1.5rem;
@@ -474,10 +525,16 @@
 
     <main>
         <section id="home" class="hero">
-            <h1>KAELIX</h1>
-            <p class="subtitle">Where cyber expertise evolves</p>
-            <p>Full-spectrum cybersecurity solutions for federal agencies, defense and enterprise organizations. From defensive operations to SOAR automation, we deliver mission-critical capabilities with agility and precision.</p>
-            <a href="#contact" class="cta-button">Get in Touch</a>
+            <div class="hero-content">
+                <h1>Full-Spectrum Cybersecurity Solutions</h1>
+                <p class="subtitle">Defense, Automation, Training & Compliance</p>
+                <p>Delivering mission-critical cyber capabilities for federal agencies, defense organizations, and enterprises. From defensive operations to SOAR automation, we combine expertise with agility to protect what matters most.</p>
+                <div class="hero-badges">
+                    <span class="badge">Service-Disabled Veteran-Owned</span>
+                    <span class="badge badge-secondary">Federal Set-Aside Eligible</span>
+                </div>
+                <a href="#contact" class="cta-button">Get in Touch</a>
+            </div>
         </section>
 
         <section id="capabilities">

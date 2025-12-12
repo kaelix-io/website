@@ -55,7 +55,7 @@
         header {
             background: var(--card-bg);
             backdrop-filter: blur(10px);
-            padding: 0.75rem 0;
+            padding: 0.4rem 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -92,9 +92,10 @@
 
         .logo-img {
             display: block;
-            height: 160px;
+            height: 200px;
             width: auto;
             object-fit: contain;
+            object-position: center;
             transition: transform 0.3s ease;
         }
 
@@ -222,7 +223,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 200px 2rem 120px;
+            padding: 220px 2rem 120px;
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
@@ -456,14 +457,14 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .logo-img { height: 100px; }
-            header { padding: 0.6rem 0; }
+            .logo-img { height: 140px; }
+            header { padding: 0.3rem 0; }
         }
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .mobile-menu-toggle { display: flex; }
-            .logo-img { height: 80px; }
-            header { padding: 0.5rem 0; }
+            .logo-img { height: 100px; }
+            header { padding: 0.25rem 0; }
             .hero { padding-top: 160px; }
             .hero h1 { font-size: 2rem; }
             .hero .subtitle { font-size: 1.1rem; }
@@ -693,8 +694,21 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Prevent scroll restoration on page load
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        // Ensure page starts at top
+        window.addEventListener('beforeunload', () => {
+            window.scrollTo(0, 0);
+        });
+
         // Load saved theme on page load
         document.addEventListener('DOMContentLoaded', () => {
+            // Ensure we're at the top on load
+            window.scrollTo(0, 0);
+            
             const savedTheme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', savedTheme);
 

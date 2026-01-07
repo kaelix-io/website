@@ -229,6 +229,16 @@
             text-align: center;
         }
 
+        .hero-video {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px var(--shadow);
+            margin: 2rem auto 0;
+        }
+
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
@@ -236,7 +246,7 @@
 
         .hero h1 {
             font-size: 2.8rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             color: var(--text);
             font-weight: 700;
             letter-spacing: 0.01em;
@@ -254,16 +264,8 @@
             font-size: 1.15rem; 
             color: var(--text-secondary); 
             max-width: 700px; 
-            margin: 0 auto 2rem;
+            margin: 0 auto;
             line-height: 1.7;
-        }
-
-        .hero-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            margin-bottom: 2rem;
         }
 
         .badge {
@@ -469,8 +471,7 @@
             .hero h1 { font-size: 2rem; }
             .hero .subtitle { font-size: 1.1rem; }
             .hero p { font-size: 1rem; }
-            .hero-badges { flex-direction: column; align-items: center; }
-            .badge { font-size: 0.85rem; padding: 0.5rem 1rem; }
+            .hero-video { border-radius: 8px; }
             h2 { font-size: 2rem; }
             .scroll-to-top {
                 bottom: 1.5rem;
@@ -542,12 +543,18 @@
                 <h1>Full-Spectrum Cybersecurity Solutions</h1>
                 <p class="subtitle">Defense, Automation, Training & Compliance</p>
                 <p>Delivering mission-critical cyber capabilities for federal agencies, defense organizations, and enterprises. From defensive operations to SOAR automation, we combine expertise with agility to protect what matters most.</p>
-                <div class="hero-badges">
-                    <span class="badge">Service-Disabled Veteran-Owned</span>
-                    <span class="badge badge-secondary">Federal Set-Aside Eligible</span>
-                </div>
-                <a href="#contact" class="cta-button">Get in Touch</a>
             </div>
+            <video 
+                class="hero-video"
+                autoplay 
+                muted 
+                loop 
+                playsinline
+                controls
+                aria-label="Kaelix Next Generation Cyber Range demonstration video">
+                <source src="Kaelix_Next_Generation_Cyber_Range.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </section>
 
         <section id="capabilities">

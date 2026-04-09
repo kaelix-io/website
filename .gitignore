@@ -20,3 +20,10 @@
 
 # OS files
 Thumbs.db
+
+# Data folder
+data/
+
+# Claude Code
+.claude/
+CLAUDE.md

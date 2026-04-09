@@ -734,7 +734,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center;
   window.addEventListener('scroll', function() {
     var y = window.scrollY;
     headerEl.classList.toggle('solid', y > 50);
-    headerEl.classList.toggle('hide', y > 100 && y > lastY);
+    /* Nav stays visible on scroll */
     lastY = y;
     scrollTopBtn.classList.toggle('visible', y > 400);
   });

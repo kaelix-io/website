@@ -391,22 +391,33 @@ footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center;
 }
 .cinema-video { width: 100%; display: block; }
 
-@media (max-width: 768px) {
+/* Tablet */
+@media (max-width: 1024px) {
+  .logo svg { height: 36px; }
+  .nav-links { gap: 1.5rem; }
+  .nav-links a { font-size: 0.8rem; }
+  .pillar { width: 240px; padding: 2rem 1.5rem; }
+}
+/* Mobile */
+@media (max-width: 767px) {
   .nav-links { display: none; }
   .mobile-toggle { display: flex; }
+  header { padding: 0.75rem 1.25rem; }
   .mega-title { font-size: 3.5rem; letter-spacing: -2px; }
   .hero-logo svg { width: 120px; height: 120px; }
+  .hero { padding: 80px 1.5rem 40px; }
   .section-heading { font-size: 1.8rem; margin-bottom: 1.5rem; }
   .pillars { flex-direction: column; align-items: center; }
-  .pillar { width: 100%; max-width: 340px; }
+  .pillar { width: 100%; max-width: 100%; }
   .tools-cascade, .cluster-stack, .diff-list { max-width: 100%; }
   .tool-row { padding: 1rem; }
   .tool-num { font-size: 1.2rem; min-width: 30px; }
   .cluster-item { padding: 0.85rem 1rem; }
   .video-cinema { border-radius: 10px; }
+  .video-dots span { width: 8px; height: 8px; }
   .cap-grid { grid-template-columns: 1fr; }
-  .full-section { padding: 60px 1.5rem; min-height: auto; }
-  .kai-section { padding: 60px 1.5rem; }
+  .full-section { padding: 60px 1.25rem; min-height: auto; }
+  .kai-section { padding: 60px 1.25rem; }
   .kai-cap-grid { grid-template-columns: 1fr; }
   .kai-stats { gap: 1.5rem; }
   .kai-stat-val { font-size: 1.6rem; }
@@ -415,15 +426,27 @@ footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center;
   .kai-tabs { gap: 0.4rem; }
   .kai-tab { padding: 0.5rem 1rem; font-size: 0.8rem; }
   .contact-grid { flex-direction: column; align-items: center; }
-  .contact-card { width: 100%; max-width: 340px; }
+  .contact-card { width: 100%; max-width: 100%; }
   .cta-big { padding: 0.85rem 2rem; font-size: 1rem; }
   .scroll-hint { bottom: 1rem; }
+  .scroll-top { bottom: 1.25rem; right: 1.25rem; width: 40px; height: 40px; }
+  footer { padding: 2rem 1.25rem 3rem; }
 }
+/* Small phones */
 @media (max-width: 480px) {
-  .mega-title { font-size: 2.5rem; }
+  .mega-title { font-size: 2.5rem; letter-spacing: -1px; }
   .hero-logo svg { width: 100px; height: 100px; }
+  .hero-sub { font-size: 1rem; }
+  .section-heading { font-size: 1.5rem; }
   .kai-stats { flex-direction: column; gap: 1rem; }
-  .kai-arch { flex-direction: column; align-items: center; }
+  .kai-arch { flex-direction: column; align-items: stretch; }
+  .kai-arch-chip { text-align: center; }
+  .kai-tabs { flex-direction: column; align-items: stretch; }
+  .kai-tab { text-align: center; }
+  .stack-title { font-size: 1.8rem; }
+  .pillar-desc { font-size: 0.85rem; }
+  .tool-row p, .kai-cap-card p { font-size: 0.8rem; }
+  footer { font-size: 0.65rem; }
 }
 </style>
 </head>

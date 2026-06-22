@@ -207,8 +207,9 @@
   .mobile-nav a:last-child{border-bottom:none;}
   .mobile-nav a:hover{color:var(--kx-fg-1);background:rgba(255,255,255,.03);}
   [data-theme="light"] .mobile-nav{background:rgba(240,242,245,.97);}
+  #menuSpacer{height:0;transition:height .3s cubic-bezier(.4,0,.2,1);}
   @media(max-width:980px){.ham{display:flex;}}
-  @media(min-width:981px){.mobile-nav{display:none!important;}}
+  @media(min-width:981px){.mobile-nav{display:none!important;}#menuSpacer{display:none;}}
 
   @media(max-width:980px){
     .nav-links{display:none;}
@@ -285,6 +286,7 @@
     <a href="#services" class="mob-link">Services</a>
   </div>
 </header>
+<div id="menuSpacer"></div>
 
 <div id="top"></div>
 <!-- HERO -->
@@ -645,10 +647,10 @@
 
   // hamburger menu
   (function(){
-    var btn=document.getElementById('hamBtn'),nav=document.getElementById('mobileNav');
+    var btn=document.getElementById('hamBtn'),nav=document.getElementById('mobileNav'),spacer=document.getElementById('menuSpacer');
     if(!btn||!nav)return;
-    function openMenu(){btn.classList.add('open');nav.classList.add('open');btn.setAttribute('aria-expanded','true');}
-    function closeMenu(){btn.classList.remove('open');nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+    function openMenu(){btn.classList.add('open');nav.classList.add('open');btn.setAttribute('aria-expanded','true');if(spacer)spacer.style.height=nav.scrollHeight+'px';}
+    function closeMenu(){btn.classList.remove('open');nav.classList.remove('open');btn.setAttribute('aria-expanded','false');if(spacer)spacer.style.height='0';}
     btn.addEventListener('click',function(){btn.classList.contains('open')?closeMenu():openMenu();});
     nav.querySelectorAll('.mob-link').forEach(function(a){a.addEventListener('click',closeMenu);});
     document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu();});

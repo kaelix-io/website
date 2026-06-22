@@ -1,0 +1,221 @@
+/* =====================================================================
+   Kaelix Cyber — Colors & Type
+   Source of truth: kaelix-io/website/index.html @ main
+   Typefaces are self-hosted variable fonts (Space Grotesk + JetBrains Mono).
+   Both OFL 1.1 — see fonts/LICENSE.md for attribution.
+   ===================================================================== */
+
+/* ---- Webfonts (self-hosted, variable) ---------------------------------
+   Two .woff2 files total, ~163 KB, served from /fonts/.
+   Paths below assume this CSS lives at the project root; rewrite the
+   url() paths if you relocate it.
+   --------------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('fonts/SpaceGrotesk-VF.woff2') format('woff2-variations'),
+       url('fonts/SpaceGrotesk-VF.woff2') format('woff2');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('fonts/JetBrainsMono-VF.woff2') format('woff2-variations'),
+       url('fonts/JetBrainsMono-VF.woff2') format('woff2');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ===================== BRAND COLORS ===================== */
+  --kx-cyan:        #00e0b8;
+  --kx-cyan-soft:   rgba(0, 224, 184, 0.15);
+  --kx-cyan-glow:   rgba(0, 224, 184, 0.08);
+
+  --kx-blue:        #2d7aff;
+  --kx-blue-soft:   rgba(45, 122, 255, 0.12);
+
+  --kx-amber:       #f0a030;
+  --kx-green:       #22d68a;
+
+  /* ===================== SURFACES (DARK — default) ===================== */
+  --kx-bg:          #06080c;
+  --kx-surface:     #0d1017;
+  --kx-surface-2:   #141820;
+  --kx-card:        #0d1017;
+  --kx-border:      #1e2330;
+
+  /* ===================== FOREGROUND ===================== */
+  --kx-fg-1:        #e4e8f0;
+  --kx-fg-2:        #6b7394;
+  --kx-fg-invert:   #06080c;
+
+  /* ===================== SEMANTIC ALIASES ===================== */
+  --bg:      var(--kx-bg);
+  --surface: var(--kx-surface);
+  --card:    var(--kx-card);
+  --border:  var(--kx-border);
+  --text:    var(--kx-fg-1);
+  --dim:     var(--kx-fg-2);
+  --accent:  var(--kx-cyan);
+
+  /* ===================== TYPE — FAMILIES ===================== */
+  --kx-font-display: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --kx-font-body:    'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --kx-font-mono:    'JetBrains Mono', ui-monospace, 'SFMono-Regular', 'Menlo', monospace;
+
+  /* ===================== TYPE — SIZES ===================== */
+  --kx-size-mega:    clamp(4rem, 10vw, 8rem);
+  --kx-size-h1:      clamp(2rem, 4vw, 3.5rem);
+  --kx-size-h2:      clamp(1.5rem, 3vw, 2.25rem);
+  --kx-size-h3:      1.5rem;
+  --kx-size-h4:      1.1rem;
+  --kx-size-body:    1rem;
+  --kx-size-small:   0.9rem;
+  --kx-size-caption: 0.75rem;
+  --kx-size-sub-hero:clamp(1.2rem, 2.5vw, 1.8rem);
+
+  /* ===================== TYPE — TRACKING ===================== */
+  --kx-track-mega:   -2px;
+  --kx-track-h1:     -1px;
+  --kx-track-caption:3px;
+  --kx-track-brand:  1.5px;
+  --kx-track-cyber:  4px;
+
+  /* ===================== SPACING / LAYOUT ===================== */
+  --kx-space-1:  4px;
+  --kx-space-2:  8px;
+  --kx-space-3:  12px;
+  --kx-space-4:  16px;
+  --kx-space-5:  24px;
+  --kx-space-6:  32px;
+  --kx-space-7:  48px;
+  --kx-space-8:  64px;
+  --kx-space-9:  100px;
+
+  /* ===================== RADII ===================== */
+  --kx-radius-xs:  4px;
+  --kx-radius-sm:  8px;
+  --kx-radius-md:  10px;
+  --kx-radius-lg:  12px;
+  --kx-radius-xl:  14px;
+  --kx-radius-2xl: 16px;
+  --kx-radius-btn: 10px;
+  --kx-radius-pill:50px;
+  --kx-radius-circle:50%;
+
+  /* ===================== ELEVATION ===================== */
+  --kx-shadow-card:   0 16px 48px rgba(0, 0, 0, 0.55), 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  --kx-shadow-chat:   0 8px 40px rgba(0, 0, 0, 0.50), 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  --kx-shadow-cinema: 0 24px 80px rgba(0, 0, 0, 0.70),
+                      0 0 60px rgba(0, 224, 184, 0.18);
+  --kx-shadow-cta:    0 8px 30px rgba(0, 224, 184, 0.45);
+
+  /* ===================== BORDERS ===================== */
+  --kx-border-hair:   1px solid var(--kx-border);
+  --kx-border-accent: 3px solid var(--kx-cyan);
+
+  /* ===================== MOTION ===================== */
+  --kx-ease:            cubic-bezier(0.22, 0.61, 0.36, 1);
+  --kx-dur-fast:        0.2s;
+  --kx-dur-base:        0.3s;
+  --kx-dur-reveal:      1s;
+  --kx-rise:            60px;
+
+  /* ===================== PROTECTION ===================== */
+  --kx-scrim-top:    linear-gradient(180deg, rgba(6,8,12,0.9), rgba(6,8,12,0));
+  --kx-backdrop-blur:12px;
+}
+
+/* --- Light theme override -------------------------------------------- */
+[data-theme="light"] {
+  --kx-bg:        #f0f2f5;
+  --kx-surface:   #ffffff;
+  --kx-surface-2: #f5f7fa;
+  --kx-card:      #ffffff;
+  --kx-border:    #d8dce5;
+  --kx-fg-1:      #0a0c10;
+  --kx-fg-2:      #5a6178;
+
+  --kx-shadow-card:   0 12px 32px rgba(15, 23, 42, 0.12), 0 2px 6px rgba(15, 23, 42, 0.06);
+  --kx-shadow-chat:   0 6px 28px rgba(15, 23, 42, 0.10), 0 1px 3px rgba(15, 23, 42, 0.05);
+  --kx-shadow-cinema: 0 20px 60px rgba(15, 23, 42, 0.18),
+                      0 0 48px rgba(0, 180, 152, 0.18);
+  --kx-shadow-cta:    0 10px 24px rgba(0, 180, 152, 0.35), 0 2px 6px rgba(0, 180, 152, 0.20);
+}
+
+/* ============================ SEMANTIC ELEMENTS ============================ */
+
+body {
+  background: var(--kx-bg);
+  color: var(--kx-fg-1);
+  font-family: var(--kx-font-body);
+  font-size: var(--kx-size-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.kx-mega {
+  font-family: var(--kx-font-display);
+  font-weight: 700;
+  font-size: var(--kx-size-mega);
+  letter-spacing: var(--kx-track-mega);
+  line-height: 0.9;
+  background: linear-gradient(135deg, var(--kx-cyan), var(--kx-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h1, .kx-h1 {
+  font-family: var(--kx-font-display);
+  font-weight: 700;
+  font-size: var(--kx-size-h1);
+  letter-spacing: var(--kx-track-h1);
+  line-height: 1.05;
+}
+
+h2, .kx-h2 {
+  font-family: var(--kx-font-display);
+  font-weight: 700;
+  font-size: var(--kx-size-h2);
+  line-height: 1.1;
+}
+
+h3, .kx-h3 {
+  font-family: var(--kx-font-display);
+  font-weight: 700;
+  font-size: var(--kx-size-h3);
+}
+
+h4, .kx-h4 {
+  font-family: var(--kx-font-display);
+  font-weight: 700;
+  font-size: var(--kx-size-h4);
+}
+
+p, .kx-p    { color: var(--kx-fg-1); font-size: var(--kx-size-body); line-height: 1.6; }
+.kx-dim     { color: var(--kx-fg-2); }
+
+.kx-label {
+  font-family: var(--kx-font-mono);
+  font-size: var(--kx-size-caption);
+  letter-spacing: var(--kx-track-caption);
+  text-transform: uppercase;
+  color: var(--kx-cyan);
+}
+
+code, pre, .kx-mono {
+  font-family: var(--kx-font-mono);
+  font-size: 0.85em;
+}
+
+.kx-sub-hero {
+  font-family: var(--kx-font-display);
+  font-weight: 300;
+  font-size: var(--kx-size-sub-hero);
+  color: var(--kx-fg-2);
+}

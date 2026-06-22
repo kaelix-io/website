@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs><linearGradient id="vIco" x1="8" y1="10" x2="56" y2="58" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#22d68a"></stop><stop offset="0.55" stop-color="#00e0b8"></stop><stop offset="1" stop-color="#2d7aff"></stop></linearGradient></defs>
+  <rect x="8" y="10" width="48" height="44" rx="5" fill="none" stroke="url(#vIco)" stroke-width="2.4"></rect>
+  <line x1="8" y1="20" x2="56" y2="20" stroke="url(#vIco)" stroke-width="1.4" opacity="0.45"></line>
+  <circle cx="15" cy="15" r="1.6" fill="#22d68a" opacity="0.7"></circle>
+  <circle cx="21" cy="15" r="1.6" fill="#00e0b8" opacity="0.7"></circle>
+  <path d="M22 27 L32 47 L42 27" fill="none" stroke="url(#vIco)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>

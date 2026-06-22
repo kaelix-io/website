@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs><linearGradient id="cIco" x1="10" y1="52" x2="54" y2="14" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ff7a1a"></stop><stop offset="0.5" stop-color="#f0a030"></stop><stop offset="1" stop-color="#ffd24a"></stop></linearGradient></defs>
+  <path d="M10 46 L32 33 L54 46 L32 59 Z" fill="none" stroke="url(#cIco)" stroke-width="2.2" opacity="0.4"></path>
+  <path d="M10 37 L32 24 L54 37 L32 50 Z" fill="none" stroke="url(#cIco)" stroke-width="2.2" opacity="0.7"></path>
+  <path d="M10 28 L32 15 L54 28 L32 41 Z" fill="rgba(255,210,74,0.10)" stroke="url(#cIco)" stroke-width="2.6"></path>
+  <text x="32" y="32" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600" fill="#ffd24a">&lt;/&gt;</text>
+</svg>

@@ -27,3 +27,6 @@ data/
 # Claude Code
 .claude/
 CLAUDE.md
+
+# Playwright MCP logs
+.playwright-mcp/

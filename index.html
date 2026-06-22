@@ -672,8 +672,6 @@
       if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(email).then(done).catch(function(){fb(email,done);});
       else fb(email,done);
     });
-    var mail=document.getElementById('demoMail');
-    mail&&mail.addEventListener('click',function(e){e.preventDefault();var u='mailto:'+email+'?subject=Kaelix%20demo%20request';try{window.location.href=u;}catch(_){window.open(u);}});
   })();
 </script>
 </body>

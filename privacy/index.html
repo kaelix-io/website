@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Kaelix Cyber</title>
+<meta name="description" content="How Kaelix Cyber Inc collects, uses, discloses, and protects personal data in connection with our business, kaelix.io, and our software and services.">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--kx-bg);color:var(--kx-fg-1);font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 48px;width:100%;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:4px;text-transform:uppercase;color:var(--kx-cyan);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+  .grad{background:linear-gradient(120deg,#00e0b8,#2d7aff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .btn{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;padding:14px 28px;border-radius:50px;cursor:pointer;transition:all .25s;border:none;display:inline-flex;align-items:center;gap:9px;}
+  .btn.primary{background:var(--kx-cyan);color:#06080c;}
+  .btn.primary:hover{transform:translateY(-3px);box-shadow:0 12px 34px rgba(0,224,184,.4);}
+  .btn.ghost{background:transparent;color:var(--kx-fg-1);border:1px solid var(--kx-border);}
+  .btn.ghost:hover{border-color:var(--kx-cyan);color:var(--kx-cyan);}
+
+  /* HEADER (shared with home) */
+  header{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .3s,border-color .3s;border-bottom:1px solid transparent;}
+  header.solid{background:rgba(6,8,12,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--kx-border);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;max-width:1320px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:11px;}
+  .brand img{width:34px;height:34px;}
+  .brand .bt{display:flex;flex-direction:column;line-height:.92;}
+  .brand .kx{font-weight:700;font-size:18px;letter-spacing:1.5px;}
+  .brand .cy{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:4px;color:var(--kx-cyan);margin-top:2px;}
+  .nav-links{display:flex;gap:30px;}
+  .nav-links a{font-size:14px;color:var(--kx-fg-2);transition:color .2s;}
+  .nav-links a:hover{color:var(--kx-fg-1);}
+  .nav-right{display:flex;align-items:center;gap:16px;}
+
+  /* LEGAL CONTENT */
+  .legal-head{padding:150px 0 10px;}
+  .legal-head h1{font-weight:700;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.02;letter-spacing:-2px;}
+  .legal-head .meta{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--kx-fg-2);margin-top:20px;}
+  .legal{max-width:760px;margin:0 auto;padding:40px 48px 110px;}
+  .legal .intro{font-size:1.12rem;line-height:1.7;color:var(--kx-fg-1);}
+  .legal h2{font-weight:700;font-size:1.4rem;letter-spacing:-.4px;margin:48px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--kx-border);}
+  .legal h2 .num{font-family:'JetBrains Mono',monospace;font-size:1rem;color:var(--kx-cyan);margin-right:10px;}
+  .legal p{font-size:1.05rem;line-height:1.7;color:var(--kx-fg-1);margin-top:14px;}
+  .legal ul{list-style:none;margin:14px 0 0;display:flex;flex-direction:column;gap:12px;}
+  .legal li{position:relative;padding-left:26px;font-size:1.05rem;line-height:1.6;color:var(--kx-fg-1);}
+  .legal li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;border-radius:3px;background:color-mix(in srgb,var(--kx-cyan) 55%,transparent);}
+  .legal li b,.legal p b{color:var(--kx-fg-1);font-weight:700;}
+  .legal a{color:var(--kx-cyan);border-bottom:1px solid color-mix(in srgb,var(--kx-cyan) 40%,transparent);transition:color .2s,border-color .2s;}
+  .legal a:hover{color:var(--kx-fg-1);border-color:var(--kx-fg-1);}
+  .legal .contact-block{margin-top:16px;padding:22px 24px;border:1px solid var(--kx-border);border-left:3px solid var(--kx-cyan);border-radius:0 12px 12px 0;background:var(--kx-surface);}
+  .legal .contact-block p{margin-top:6px;}
+
+  /* FOOTER (shared with home) */
+  footer{border-top:1px solid var(--kx-border);padding:56px 48px 40px;}
+  .foot{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+  .foot .lead{max-width:300px;}
+  .foot .lead p{color:var(--kx-fg-2);font-size:13px;line-height:1.6;margin-top:14px;}
+  .foot-cols{display:flex;gap:64px;flex-wrap:wrap;}
+  .fcol h5{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--kx-fg-2);margin-bottom:14px;}
+  .fcol a{display:block;font-size:14px;color:var(--kx-fg-2);margin-bottom:10px;transition:color .2s;}
+  .fcol a:hover{color:var(--kx-cyan);}
+  .foot-base{max-width:1240px;margin:40px auto 0;padding-top:24px;border-top:1px solid var(--kx-border);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--kx-fg-2);letter-spacing:1px;}
+
+  /* HAMBURGER + MOBILE NAV (shared with home) */
+  .ham{display:none;flex-direction:column;gap:5px;width:38px;height:38px;align-items:center;justify-content:center;border:1px solid var(--kx-border);border-radius:8px;background:transparent;cursor:pointer;transition:border-color .2s;flex-shrink:0;}
+  .ham:hover{border-color:var(--kx-cyan);}
+  .ham span{display:block;width:18px;height:1.5px;background:var(--kx-fg-1);border-radius:2px;transition:transform .28s ease,opacity .28s ease;}
+  .ham.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  .ham.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+  .ham.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+  .mobile-nav{overflow:hidden;max-height:0;transition:max-height .3s cubic-bezier(.4,0,.2,1);background:rgba(6,8,12,.96);backdrop-filter:blur(14px);border-top:1px solid transparent;}
+  .mobile-nav.open{max-height:260px;border-top-color:var(--kx-border);}
+  .mobile-nav a{display:block;padding:16px 20px;font-size:16px;font-weight:500;color:var(--kx-fg-2);border-bottom:1px solid var(--kx-border);transition:color .2s,background .2s;}
+  .mobile-nav a:last-child{border-bottom:none;}
+  .mobile-nav a:hover{color:var(--kx-fg-1);background:rgba(255,255,255,.03);}
+  [data-theme="light"] .mobile-nav{background:rgba(240,242,245,.97);}
+  #menuSpacer{height:0;transition:height .3s cubic-bezier(.4,0,.2,1);}
+  @media(max-width:980px){.ham{display:flex;}.nav-links{display:none;}}
+  @media(min-width:981px){.mobile-nav{display:none!important;}#menuSpacer{display:none;}}
+  @media(max-width:768px){.nav{padding:14px 20px;}.legal{padding:32px 24px 90px;}.wrap{padding:0 24px;}.legal-head{padding-top:130px;}}
+  @media(max-width:480px){.nav{padding:12px 16px;}.nav-right .btn{display:none;}}
+
+  /* THEME TOGGLE (shared with home) */
+  .theme-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--kx-border);background:transparent;color:var(--kx-fg-1);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s,color .2s;}
+  .theme-btn:hover{border-color:var(--kx-cyan);color:var(--kx-cyan);}
+  .theme-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;}
+  [data-theme="light"] .theme-btn .i-moon{display:none;}
+  .theme-btn .i-sun{display:none;}
+  [data-theme="light"] .theme-btn .i-sun{display:block;}
+  [data-theme="light"] header.solid{background:rgba(240,242,245,.85);}
+  [data-theme="light"] .legal .contact-block{background:var(--kx-surface);}
+  .logo-light{display:none!important;}
+  [data-theme="light"] .logo-dark{display:none!important;}
+  [data-theme="light"] .logo-light{display:block!important;}
+
+  /* DEMO MODAL (shared with home) */
+  .modal-ov{position:fixed;inset:0;background:rgba(3,5,8,.72);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:24px;z-index:300;opacity:0;pointer-events:none;transition:opacity .25s;}
+  .modal-ov.open{opacity:1;pointer-events:auto;}
+  .modal{background:linear-gradient(160deg,#0e131c,#0a0d14);border:1px solid var(--kx-border);border-radius:20px;padding:38px 32px 32px;max-width:430px;width:100%;text-align:center;position:relative;transform:translateY(12px) scale(.98);transition:transform .25s;}
+  .modal-ov.open .modal{transform:none;}
+  [data-theme="light"] .modal{background:linear-gradient(160deg,#ffffff,#f5f7fa);}
+  .modal .mlogo{width:46px;height:46px;margin:0 auto 16px;display:block;}
+  .modal h3{font-size:22px;font-weight:700;letter-spacing:-.5px;}
+  .modal .msub{color:var(--kx-fg-2);font-size:14px;line-height:1.6;margin-top:10px;}
+  .modal .email{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-top:22px;padding:11px 12px 11px 16px;border:1px solid var(--kx-border);border-radius:12px;background:rgba(125,140,170,.06);}
+  .modal .email .addr{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--kx-fg-1);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .modal .copy{flex:none;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--kx-cyan);background:rgba(0,224,184,.1);border:1px solid rgba(0,224,184,.32);border-radius:8px;padding:7px 13px;cursor:pointer;transition:all .2s;}
+  .modal .copy:hover{background:rgba(0,224,184,.2);}
+  .modal .copy.done{color:#06080c;background:var(--kx-cyan);border-color:var(--kx-cyan);}
+  .modal .mbtns{margin-top:14px;}
+  .modal .mbtns .btn{width:100%;justify-content:center;}
+  .modal .mclose{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:8px;border:1px solid var(--kx-border);background:transparent;color:var(--kx-fg-2);cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  .modal .mclose:hover{color:var(--kx-fg-1);border-color:var(--kx-fg-2);}
+  .modal .mclose svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="nav">
+    <a class="brand" href="../index.html">
+      <img src="../assets/kaelix_mark.svg" alt="" class="logo-dark">
+      <img src="../assets/kaelix_mark_light.svg" alt="" class="logo-light">
+      <span class="bt"><span class="kx">KAELIX</span><span class="cy">C Y B E R</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html#capabilities">Capabilities</a>
+      <a href="../index.html#cycle">Platform</a>
+      <a href="../index.html#services">Services</a>
+    </nav>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle light / dark theme" title="Toggle theme">
+        <svg class="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke-linejoin="round"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19" stroke-linecap="round"/></svg>
+      </button>
+      <a class="btn primary" data-demo href="mailto:contact@kaelix.io" style="padding:11px 22px;font-size:14px;">Request a demo →</a>
+      <button class="ham" id="hamBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <a href="../index.html#capabilities" class="mob-link">Capabilities</a>
+    <a href="../index.html#cycle" class="mob-link">Platform</a>
+    <a href="../index.html#services" class="mob-link">Services</a>
+    <a href="../index.html#contact" class="mob-link">Contact</a>
+  </div>
+</header>
+<div id="menuSpacer"></div>
+
+<div class="legal-head wrap">
+  <div class="eyebrow">Legal</div>
+  <h1>Privacy <span class="grad">Policy</span></h1>
+  <div class="meta">Version 1.0 · Effective October 27, 2026</div>
+</div>
+
+<main class="legal">
+  <p class="intro">This Privacy Policy describes how Kaelix Cyber Inc (“Kaelix,” “we,” or “us”) collects, uses, discloses, and protects personal data in connection with our business, our website at kaelix.io, and our software and services, including Kaelix Vantage. Questions about this policy can be sent to the contact details in Section 12.</p>
+
+  <h2><span class="num">1</span>Whose Personal Data We Collect</h2>
+  <ul>
+    <li><b>Customer personnel:</b> People who work for our customers, including purchasing, billing, and administrative contacts and people who contact us for support.</li>
+    <li><b>Prospects, partners, and vendors:</b> People at organizations we are discussing business with, and partners, suppliers, and vendors we work with.</li>
+    <li><b>Website visitors:</b> kaelix.io does not use contact forms, newsletter sign-ups, analytics, or tracking cookies, and we do not collect personal data from website visits.</li>
+  </ul>
+
+  <h2><span class="num">2</span>What Personal Data We Collect</h2>
+  <ul>
+    <li><b>Business contact information:</b> Name, job title, organization, business email address, telephone number, and business mailing address.</li>
+    <li><b>Contract and billing information:</b> Contract, order, invoice, and payment information for the organization and its contacts.</li>
+    <li><b>Support information:</b> Information in support requests and correspondence, and information we observe in a customer’s environment while providing support at the customer’s request.</li>
+    <li><b>License activation information:</b> For internet-connected deployments of our software, the information needed to activate the license.</li>
+    <li><b>Customer exports:</b> Exports of customer content that a customer chooses to send to us under its license agreement.</li>
+  </ul>
+
+  <h2><span class="num">3</span>Our Software</h2>
+  <p>Kaelix Vantage runs in the customer’s own environment. It contains no analytics or usage telemetry and does not send usage data or customer content to Kaelix. Personal data stored in a customer’s deployment is controlled by that customer.</p>
+  <p>We receive personal data from a customer’s deployment only when the customer provides it: through support access the customer grants, exports the customer sends us, or license activation for connected deployments. When we handle personal data on a customer’s behalf, we act on the customer’s instructions and under our agreement with the customer.</p>
+  <p>If a customer configures the software to use a third-party AI model provider, content processed by the AI features is sent from the customer’s environment to that provider under the provider’s terms. That connection is controlled by the customer, not by Kaelix.</p>
+
+  <h2><span class="num">4</span>How We Use Personal Data</h2>
+  <ul>
+    <li>To provide, deliver, license, support, and maintain our software and services.</li>
+    <li>To prepare and manage quotes, orders, contracts, invoices, and payments.</li>
+    <li>To communicate with customers, partners, and vendors about our business relationship.</li>
+    <li>To protect the security of our systems and our customers’ data, and to investigate incidents.</li>
+    <li>To meet legal, regulatory, tax, export-control, and contractual obligations, and to establish or defend legal claims.</li>
+  </ul>
+  <p>We do not sell personal data, share it for cross-context behavioral advertising, or use it for targeted advertising.</p>
+
+  <h2><span class="num">5</span>How We Disclose Personal Data</h2>
+  <ul>
+    <li><b>Service providers:</b> Companies that provide services to us, such as email, collaboration, document storage, accounting, and payment processing, under obligations to protect the data and use it only to provide services to us.</li>
+    <li><b>Professional advisors:</b> Attorneys, accountants, auditors, and insurers, under duties of confidentiality.</li>
+    <li><b>The customer you work for:</b> Other people within the same customer organization, as needed to manage the customer relationship.</li>
+    <li><b>Legal and safety:</b> Where required by law, legal process, or government request, or to protect the rights, property, or safety of Kaelix, our customers, or others.</li>
+    <li><b>Business transfers:</b> In connection with a merger, acquisition, financing, or sale of all or part of our business, subject to this policy.</li>
+  </ul>
+
+  <h2><span class="num">6</span>Data Retention</h2>
+  <p>We keep personal data for as long as needed for the purposes in this policy, including the length of the customer relationship, and afterward as needed to meet legal, tax, and contractual requirements and to resolve disputes. We do not keep credentials issued for a support session beyond that session. When personal data is no longer needed, we delete it or de-identify it.</p>
+
+  <h2><span class="num">7</span>Security</h2>
+  <p>We use reasonable administrative, technical, and physical safeguards to protect personal data and limit access to people who need it. No method of storage or transmission is completely secure. If we confirm unauthorized access to or disclosure of a customer’s data in our possession, we notify the customer as stated in our agreements, and we notify individuals and authorities where the law requires.</p>
+
+  <h2><span class="num">8</span>Where Data Is Processed</h2>
+  <p>Kaelix is based in the United States, and we process personal data in the United States. If you provide personal data to us from outside the United States, it will be transferred to and processed in the United States.</p>
+
+  <h2><span class="num">9</span>Your Rights and Choices</h2>
+  <p>Depending on where you live, including under the privacy laws of Utah and other U.S. states, you may have the right to:</p>
+  <ul>
+    <li>Confirm whether we process your personal data and get access to a copy of it.</li>
+    <li>Correct inaccurate personal data.</li>
+    <li>Delete personal data you provided to us or that we hold about you.</li>
+    <li>Opt out of the sale of personal data, targeted advertising, or profiling. We do not engage in these activities.</li>
+  </ul>
+  <p>We honor these requests from any individual, wherever located, to the extent we can, subject to legal exceptions. To make a request, email <a href="mailto:privacy@kaelix.io">privacy@kaelix.io</a>. We will verify your identity before acting on a request and respond within the time required by applicable law. You may use an authorized agent with your signed permission. We will not discriminate against you for exercising your rights. If we deny a request, you may appeal by replying to our decision, and we will explain the outcome of the appeal in writing.</p>
+  <p>Where we handle personal data on behalf of a customer, as described in Section 3, we will refer your request to that customer and assist the customer in responding.</p>
+
+  <h2><span class="num">10</span>Children</h2>
+  <p>Our products and services are intended for organizations and are not directed to children under 16. We do not knowingly collect personal data from children. If you believe a child has provided personal data to us, contact us and we will delete it.</p>
+
+  <h2><span class="num">11</span>Changes to This Policy</h2>
+  <p>We may update this policy. We will post the updated policy with a new effective date and, where the changes are material, notify customers by email or within our software.</p>
+
+  <h2><span class="num">12</span>Contact Us</h2>
+  <div class="contact-block">
+    <p>For privacy questions or to exercise your rights, email <a href="mailto:privacy@kaelix.io">privacy@kaelix.io</a>.</p>
+    <p>For anything else, reach us through our <a href="../index.html#contact">Contact Us</a> page.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="foot">
+    <div class="lead">
+      <a class="brand" href="../index.html">
+        <img src="../assets/kaelix_mark.svg" alt="" class="logo-dark" style="width:30px;height:30px;">
+        <img src="../assets/kaelix_mark_light.svg" alt="" class="logo-light" style="width:30px;height:30px;">
+        <span class="bt"><span class="kx" style="font-size:16px;">KAELIX</span><span class="cy">C Y B E R</span></span>
+      </a>
+      <p>Where cyber expertise evolves. Advanced cyber defense, training, and automation for every mission.</p>
+    </div>
+    <div class="foot-cols">
+      <div class="fcol"><h5>Platform</h5><a href="../index.html#capabilities">Capabilities</a><a href="../index.html#vantage">Vantage</a><a href="../index.html#trace">TRACE</a><a href="../index.html#kai">KAI</a></div>
+      <div class="fcol"><h5>Company</h5><a href="../index.html#about">About</a><a href="index.html">Privacy</a></div>
+      <div class="fcol"><h5>Contact</h5><a href="mailto:contact@kaelix.io">contact@kaelix.io</a><a href="tel:+13854240864">1-385-424-0864</a><a href="https://kaelix.io">kaelix.io</a></div>
+    </div>
+  </div>
+  <div class="foot-base">
+    <span>© 2026 Kaelix Cyber Inc. · SDVOSB · VOSB</span>
+    <span>Primary NAICS: 541519</span>
+  </div>
+</footer>
+
+<!-- DEMO MODAL -->
+<div class="modal-ov" id="demoModal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-label="Request a demo">
+    <button class="mclose" id="demoClose" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg></button>
+    <img class="mlogo logo-dark" src="../assets/kaelix_mark.svg" alt="">
+    <img class="mlogo logo-light" src="../assets/kaelix_mark_light.svg" alt="">
+    <h3>Request a demo</h3>
+    <p class="msub">Reach our team and we'll walk you through the platform and services in your environment.</p>
+    <div class="email">
+      <span class="addr" id="demoEmail">contact@kaelix.io</span>
+      <button class="copy" id="demoCopy">Copy</button>
+    </div>
+    <div class="mbtns">
+      <a class="btn primary" id="demoMail" href="mailto:contact@kaelix.io?subject=Kaelix%20demo%20request">Open mail app →</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // header solid
+  const hdr=document.getElementById('hdr');
+  addEventListener('scroll',()=>hdr.classList.toggle('solid',scrollY>40));
+  hdr.classList.toggle('solid',scrollY>40);
+
+  // theme toggle
+  (function(){
+    const btn=document.getElementById('themeBtn');
+    function apply(t){
+      if(t==='light')document.documentElement.setAttribute('data-theme','light');
+      else document.documentElement.removeAttribute('data-theme');
+    }
+    let cur=localStorage.getItem('kaelix-site-theme')||'dark';
+    apply(cur);
+    btn&&btn.addEventListener('click',()=>{
+      cur=(document.documentElement.getAttribute('data-theme')==='light')?'dark':'light';
+      apply(cur);localStorage.setItem('kaelix-site-theme',cur);
+    });
+  })();
+
+  // hamburger menu
+  (function(){
+    var btn=document.getElementById('hamBtn'),nav=document.getElementById('mobileNav'),spacer=document.getElementById('menuSpacer');
+    if(!btn||!nav)return;
+    function openMenu(){btn.classList.add('open');nav.classList.add('open');btn.setAttribute('aria-expanded','true');if(spacer)spacer.style.height=nav.scrollHeight+'px';}
+    function closeMenu(){btn.classList.remove('open');nav.classList.remove('open');btn.setAttribute('aria-expanded','false');if(spacer)spacer.style.height='0';}
+    btn.addEventListener('click',function(){btn.classList.contains('open')?closeMenu():openMenu();});
+    nav.querySelectorAll('.mob-link').forEach(function(a){a.addEventListener('click',closeMenu);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu();});
+  })();
+
+  // request-a-demo modal
+  (function(){
+    var ov=document.getElementById('demoModal');if(!ov)return;
+    var copyBtn=document.getElementById('demoCopy'),email='contact@kaelix.io';
+    function open(e){if(e)e.preventDefault();ov.classList.add('open');ov.setAttribute('aria-hidden','false');}
+    function close(){ov.classList.remove('open');ov.setAttribute('aria-hidden','true');if(copyBtn){copyBtn.textContent='Copy';copyBtn.classList.remove('done');}}
+    document.querySelectorAll('[data-demo]').forEach(function(b){b.addEventListener('click',open);});
+    document.getElementById('demoClose').addEventListener('click',close);
+    ov.addEventListener('click',function(e){if(e.target===ov)close();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    function fb(t,cb){var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');}catch(_){}document.body.removeChild(ta);cb();}
+    function done(){copyBtn.textContent='Copied ✓';copyBtn.classList.add('done');setTimeout(function(){copyBtn.textContent='Copy';copyBtn.classList.remove('done');},2000);}
+    copyBtn&&copyBtn.addEventListener('click',function(){
+      if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(email).then(done).catch(function(){fb(email,done);});
+      else fb(email,done);
+    });
+  })();
+</script>
+</body>
+</html>
